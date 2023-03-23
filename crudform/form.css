@@ -1,0 +1,385 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-weight: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background:url(back.jpg);
+    background-size: cover;
+    color: #333;
+    font: 100%;
+}
+
+#Update{
+    display: none;
+}
+
+.container{
+  padding:10%;
+  text-align: center;
+}
+
+.flex{
+  display: flex;
+  flex-wrap:wrap;
+  background: white;
+  width: 80%;
+  padding: 10%;
+  text-align: left;
+}
+
+form{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.formfield{
+  padding: 20px;
+}
+
+h1:after{
+  content:"";
+  display:block;
+  width: 50%;
+  border-bottom: 2px solid salmon;
+  margin: 5px auto ;
+}
+
+.buttonalign{
+  padding: 20px;
+}
+
+button,
+fieldset,
+input,
+legend {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+input,
+select,
+textarea {
+  border: 2px solid lightblue;
+  background-color: white;
+  border-radius: 5px;
+}
+
+input[type=number]{
+    appearance: textfield;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea {
+  font: 16px 'Montserrat', sans-serif;
+  display: block;
+  box-sizing: border-box;
+  padding: 10px 10px;
+}
+
+
+  
+input[type="radio"] {
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+}
+
+input[type="radio"]:checked {
+    background-image: radial-gradient(
+      hsl(213, 73%, 50%) 40%,
+      transparent calc(40% + 1px)
+    );
+  }
+
+  
+.label {
+    display: inline-block;
+    font: 16px;
+    margin-top: 10px;
+  }
+
+  .btn{
+    padding: 20px;
+    align-items: center;
+  }
+
+  .btn button{
+    padding: 10px 30px;
+    color: white;
+    text-transform: uppercase;
+    background-color: red;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    transition: .5s ease;
+  }
+
+  .btnreset:hover{
+    cursor: pointer;
+    transform: scale(0.95);
+    background-color: #00b6de ;
+  }
+
+  button:hover{
+    cursor: pointer;
+    transform: scale(0.95);
+    background-color: green;
+  }
+
+:focus::placeholder{
+    color: transparent;
+}
+
+.errormsg{
+  display: none;
+	color: red;
+    font-size: 10px;
+	
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: white;
+
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+a{
+  border: 1px solid lightseagreen;
+  background-color: paleturquoise;
+  margin: 5px;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  transition: 1s ease;
+}
+
+.btna{
+  background-color: lightseagreen;
+  border: 2px solid #333;
+}
+
+.btnb{
+  background-color: red;
+  border: 2px solid #333;
+}
+
+a:hover{
+  cursor: pointer;
+}
+
+#toast {
+  visibility: hidden;
+  max-width: 50px;
+  height: 50px;
+  /*margin-left: -125px;*/
+  margin: auto;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  position: fixed;
+  z-index: 1;
+  top: 20px;
+  right:0px;
+  font-size: 16px;
+  white-space: nowrap;
+  border-bottom: 4px solid #3ad48c;
+}
+#toast #img{
+width: 50px;
+height: 50px;
+  float: left;
+  box-sizing: border-box;  
+  background-color: #111;
+  color: #fff;
+}
+#toast #desc{
+  color: #fff;
+  padding: 16px;
+  overflow: hidden;
+white-space: nowrap;
+}
+
+#toast #img img{
+  height: 50px;
+  width: 50px;
+}
+
+
+#toast.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
+}
+
+
+#toastupdate {
+  visibility: hidden;
+  max-width: 50px;
+  height: 50px;
+  /*margin-left: -125px;*/
+  margin: auto;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  position: fixed;
+  z-index: 1;
+  top: 20px;
+  right:0px;
+  font-size: 16px;
+  white-space: nowrap;
+  border: 0;
+  border-bottom-width: 4px;
+  border-style: solid;
+  border-image: linear-gradient(to right, #00eb97, #00ddaa, #00cbc2, #00b6de, #00a0fd) 1;
+}
+#toastupdate #img{
+width: 50px;
+height: 50px;
+  float: left;
+  box-sizing: border-box;  
+  background-color: #111;
+  color: #fff;
+}
+#toastupdate #desc{
+  color: #fff;
+  padding: 16px;
+  overflow: hidden;
+white-space: nowrap;
+}
+
+#toastupdate #img img{
+  padding: 5px;
+  height: 40px;
+  width: 40px;
+}
+
+#toastupdate.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
+}
+
+#toastdelete {
+  visibility: hidden;
+  max-width: 50px;
+  height: 50px;
+  /*margin-left: -125px;*/
+  margin: auto;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  position: fixed;
+  z-index: 1;
+  top: 20px;
+  right:0px;
+  font-size: 16px;
+  white-space: nowrap;
+  border-bottom: 4px solid #cf352e;
+}
+#toastdelete #img{
+width: 50px;
+height: 50px;
+  float: left;
+  box-sizing: border-box;  
+  background-color: #111;
+  color: #fff;
+}
+#toastdelete #desc{
+  color: #fff;
+  padding: 16px;
+  overflow: hidden;
+white-space: nowrap;
+}
+
+#toastdelete #img img{
+  padding: 5px;
+  height: 40px;
+  width: 40px;
+}
+
+#toastdelete.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {top: 0; opacity: 0;} 
+  to {top: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {top: 0; opacity: 0;}
+  to {top: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes expand {
+  from {min-width: 50px} 
+  to {min-width: 350px}
+}
+
+@keyframes expand {
+  from {min-width: 50px}
+  to {min-width: 350px}
+}
+@-webkit-keyframes stay {
+  from {min-width: 350px} 
+  to {min-width: 350px}
+}
+
+@keyframes stay {
+  from {min-width: 350px}
+  to {min-width: 350px}
+}
+@-webkit-keyframes shrink {
+  from {min-width: 350px;} 
+  to {min-width: 50px;}
+}
+
+@keyframes shrink {
+  from {min-width: 350px;} 
+  to {min-width: 50px;}
+}
+
+@-webkit-keyframes fadeout {
+  from {top: 30px; opacity: 1;} 
+  to {top: 60px; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {top: 30px; opacity: 1;}
+  to {top: 60px; opacity: 0;}
+}

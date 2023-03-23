@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD OPERATION</title>
+    <link rel="stylesheet" href="form.css">
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400&display=swap" rel="stylesheet"> 
+</head>
+<body>
+<div class="container">
+    <h1>CRUD OPERATION</h1>
+    <div class="flex">
+        <form id="formdata" onsubmit="AddData(event)" >
+    
+            <div class="formfield">
+                <label for="name">Name</label>
+                <input type="text" class="formValid" name="name" onblur="inputchecker()"  id="name" class="form-control" placeholder="Enter Name...">
+                <p class="errormsg">Please Enter Valid Name...</p>
+                
+            </div>
+
+            <div class="formfield">
+                <label for="password">Password</label>
+                <input type="password" class="formValid" name="password" id="password" onblur="inputchecker()" class="form-control" placeholder="Enter Password...">
+                <p class="errormsg">Please Enter Valid Password...</p>
+               
+            </div>
+
+            <div class="formfield">
+                <label for="age">Age</label>
+                <input type="number" class="formValid" name="age" id="age"  class="form-control" onblur="inputchecker()" placeholder="Enter Age...">
+                <p class="errormsg">Please Enter Valid Age (0xx or 1xx)...</p>
+               
+            </div>
+
+            <div class="formfield">
+                <label for="mob">Mobile Number</label>
+                <input type="number" class="formValid" name="mob" class="form-control" id="mob" onblur="inputchecker()"  placeholder="Enter Mobile Number...">
+                <p class="errormsg">Please Enter 10 Digit Valid Number...</p>
+               
+
+            </div>
+
+            <div class="formfield">
+                <label for="email">Email</label>
+                <input type="email" class="formValid" name="email"  id="email" onblur="inputchecker()" class="form-control" placeholder="Enter Email...">
+                <p class="errormsg">Please Enter Valid Email...</p>
+               
+
+            </div>
+
+            <div class="formfield">
+                <label for="city">City</label>
+                <input type="text" class="formValid" name="city" id="city" onblur="inputchecker()"  class="form-control" placeholder="Enter City...">
+                <p class="errormsg">Please Enter Valid City...</p>
+
+            </div>
+            <div class="btn">
+                <button id="Submit" >Submit Data</button>
+                <button id="Update" >Update Data</button>
+            </div>
+        
+        </form>
+    </div>
+    <hr>
+
+            <table class="table" id="crudtable">
+                <thead>
+                    <tr>
+                        <!-- <th>Name</th>
+                        <th>Age</th>
+                        <th>Password</th>
+                        <th>Mobile Number</th>
+                        <th>Email</th>
+                        <th>City</th>
+                        <th>Crud Operation</th> -->
+                        <th>Name</th>
+                        <th>Password</th>
+                        <th>Email</th>
+                        <th>Mobile No.</th>
+                        <th>City</th>
+                        <th>Age</th>
+                        <th>Crud Operation</th>
+
+
+            
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+
+</div>
+
+<div id="toast">
+    <div id="img"><img src="checked.png"></div>
+    <div id="desc">Successfully Submitted</div>
+</div>
+
+<div id="toastupdate">
+    <div id="img"><img src="reset.png"></div>
+    <div id="desc">Data Updated Successfully</div>
+</div>
+
+<div id="toastdelete">
+    <div id="img"><img src="delete.png"></div>
+    <div id="desc">Data Deleted Successfully</div>
+</div>
+
+    <script src="formnew.js"></script>
+</body>
+</html>
